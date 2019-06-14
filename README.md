@@ -2,7 +2,7 @@
 
 ## 原文地址
 
-[英文原版在线版](https://swift.org/documentation/api-design-guidelines/#argument-labels)
+[英文原版在线版](https://swift.org/documentation/#migration-guides)
 
 ## 更新记录
 
@@ -513,7 +513,7 @@
 
 * **对于复杂度不是O(1)的计算型属性，要通过注释特别说明。** 人们总是认为属性访问不牵扯大量计算，因为在人类的心智模型里会潜意识的认为当前访问的只是一个存储型属性。当这个假设被打破时，有必要提醒他们。
 
-> mental model 是指心智模型，可以通俗的理解为人们的思考方式或者思维过程，wiki 链接：[https://en.wikipedia.org/wiki/Mental_model](https://en.wikipedia.org/wiki/Mental_model)
+  > mental model 是指心智模型，可以通俗的理解为人们的思考方式或者思维过程，wiki 链接：[https://en.wikipedia.org/wiki/Mental_model](https://en.wikipedia.org/wiki/Mental_model)
 
 * **Prefer methods and properties to free functions.** Free functions are used only in special cases:
 
