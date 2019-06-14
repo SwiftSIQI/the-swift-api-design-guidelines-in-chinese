@@ -2,7 +2,7 @@
 
 ## 原文地址
 
-[英文原版在线版](https://swift.org/documentation/#migration-guides)
+[英文原版在线版](https://swift.org/documentation/api-design-guidelines/)
 
 ## 更新记录
 
