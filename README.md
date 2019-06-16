@@ -50,11 +50,11 @@
 
 * **Clarity at the point of use** is your most important goal. Entities such as methods and properties are declared only once but used repeatedly. Design APIs to make those uses clear and concise. When evaluating a design, reading a declaration is seldom sufficient; always examine a use case to make sure it looks clear in context.
 
-* **清晰的传达使用意图**是最主要的目标。方法和属性这样的实体虽然只被声明了一次，但却会被重复调用。因此在设计 API 时，应尽可能保证这些实体的使用简单明了。当评估某个设计优劣时，只阅读其声明是不够的；还需要将其放在使用场景下，并结合上下文来检查其含义是否做到了清晰明了。
+* **清晰的传达使用意图**是最主要的目标。方法和属性这样的实体虽然只被声明了一次，但却会被重复调用。因此在设计 API 时，应尽可能保证这些实体的使用简单明了。当评估某个设计优劣时，只阅读其声明是不够的；还需要将其放在使用场景下，并结合上下文来检查其含义是否做到清晰明了。
 
 * **Clarity is more important than brevity.** Although Swift code can be compact, it is a non-goal to enable the smallest possible code with the fewest characters. Brevity in Swift code, where it occurs, is a side-effect of the strong type system and features that naturally reduce boilerplate.
 
-* **传达清晰的意图比文字的简洁更重要**。尽管 Swift 的代码可以写的十分小巧紧凑，但用最少的字符来书写代码并非 Swift 的设计本意。在 Swift 代码中所体现的简洁性，主要是受益于自身是强类型语言和能天然减少模板代码的特性。
+* **传达清晰的意图比文字简洁更重要**。尽管 Swift 代码可以写的十分小巧紧凑，但用最少的字符来书写代码并非 Swift 的设计本意。如果 Swift 代码看起来非常简洁，那只是强类型系统和各种特性带来的副作用，无形中减少了模板代码（boilerplate）的使用。
   
   >译者注：boilerplate 是指 boilerplate code, [详情请点击这里](https://en.wikipedia.org/wiki/Boilerplate_code)
 
@@ -64,15 +64,15 @@
 
   > If you are having trouble describing your API’s functionality in simple terms, **you may have designed the wrong API.**    
   >
-  > 如果无法用简单的术语来描述你自己设计的 API ，那么**你很有可能在设计 API 上犯了错。**
+  > 如果无法用简单的术语来描述你设计的 API ，那么**你很有可能在设计 API 上犯了错。**
 
   * **Use Swift’s dialect of Markdown.**
 
-  * **使用 Swift 提供的[特别版 Markdown 语法](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/)**
+  * **使用 Swift 提供的 [特别版 Markdown 语法](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/)**
 
   * **Begin with a summary** that describes the entity being declared. Often, an API can be completely understood from its declaration and its summary.
 
-  * **开头的摘要**是用来描述实体的。通常情况下，通过阅读 API 的声明和摘要就可以完全理解其用途。
+  * **开头的摘要**用来描述实体。通常情况下，阅读 API 的声明和摘要就可以完全理解其用途。
 
     ```swift
     /// Returns a "view" of `self` containing the same elements in
@@ -82,17 +82,17 @@
 
     * **Focus on the summary**; it’s the most important part. Many excellent documentation comments consist of nothing more than a great summary.
 
-    * **专注于摘要**；这是最重要的部分。高质量的摘要就足以让文档注释成为优秀的典范。
+    * **专注于摘要**；这是最重要的部分。高质量的摘要足以让文档注释成为优秀的典范。
 
     * **Use a single sentence fragment if possible**, ending with a period. Do not use a complete sentence.
 
-    * **用一个的语句片段进行描述**，并用句号结尾。不要写一个复杂的句子。
+    * **用一个语句片段进行描述**，并用句号结尾。不要写一个复杂的句子。
 
       > 译者注：sentence fragment 是指能表达明确含义但从语法上并不完整的句子，[详情请点击这里](https://en.wiktionary.org/wiki/sentence_fragment)
 
     * **Describe what a function or method does and what it returns**, omitting null effects and Void returns:
 
-    * **描述一个函数或方法做什么，以及会返回什么**，对于那些无返回值或者什么都不做的情况就略过。
+    * **描述一个函数或方法做什么，以及会返回什么**，对于那些无返回值或者什么都不做的情况直接省略。
 
       ```swift
       /// Inserts `newHead` at the beginning of `self`.
@@ -146,9 +146,10 @@
 
   * **Optionally, continue** with one or more paragraphs and bullet items. Paragraphs are separated by blank lines and use complete sentences.
 
-  * **此外，继续添加**一个或多个段落并有序排列这些条目。但是段落应该使用空行隔开，并使用完整的句子进行描述。
+  * **如果需要，可以继续添加**一个或多个段落并有序排列这些条目。但是段落应该使用空行隔开，并使用完整的句子进行描述。
 
-    > 译者注：builet 应该是指 builet journal 里的排序方式: [详情请点击这里](https://bulletjournal.com/pages/learn)
+    > 译者注：bullet 应该是指 bullet journal 里的排序方式: [详情请点击这里](https://bulletjournal.com/pages/learn)
+    > 校对：bullet item 是通用名称，就是指“列表”，不需要额外解释。
 
     ```swift
     /// Writes the textual representation of each    ← Summary
@@ -193,11 +194,11 @@
 
 * **Include all the words needed to avoid ambiguity** for a person reading code where the name is used.
 
-* **使用的单词需要避免歧义**，以免造成使用者的困惑
+* **最大程度的避免歧义**，以免造成使用者的困惑。
 
   For example, consider a method that removes the element at a given position within a collection.
 
-  例如：假设下面是一个移除集合中指定位置元素的方法。
+  例如：假设下面这个方法可以移除集合中指定位置的元素。
 
     ```swift
     👍👍👍
@@ -209,7 +210,7 @@
   
   If we were to omit the word `at` from the method signature, it could imply to the reader that the method searches for and removes an element equal to `x`, rather than using `x` to indicate the position of the element to remove.
   
-  如果我们省略方法名中的 `at`，它可能暗示读者该方法会进行搜索并删除集合中等于 `x` 的元素，而不是用 `x` 来指示元素在集合中的位置并删除这个元素。
+  如果我们省略方法名中的 `at`，它可能暗示读者该方法会搜索并删除集合中等于 `x` 的元素，而不是删除位置是 `x` 的元素。
 
     ```swift
     👎👎👎
@@ -232,7 +233,7 @@
 
   In this case, the word Element adds nothing salient at the call site. This API would be better:
 
-  在上面的代码中，`Element` 在调用时没有提供任何有效的信息， API 修改成下面的样式会更好。
+  在上面的代码中，`Element` 在调用时没有提供任何有效的信息， API 修改成下面这样会更好。
 
     ```swift
     👍👍👍
@@ -242,7 +243,7 @@
 
   Occasionally, repeating type information is necessary to avoid ambiguity, but in general it is better to use a word that describes a parameter’s role rather than its type. See the next item for details.
 
-  在个别情况下，重复类型信息对于消除歧义是有帮助的，但总的来说，用一个表明参数作用，而不是参数类型的词会更好一些，详见下一规则。
+  在个别情况下，重复类型信息对于消除歧义是有帮助的。但总的来说，最好能描述参数作用，而不是参数类型。详见下一规则。
 
 * **Name variables, parameters, and associated types according to their roles**, rather than their type constraints.
 
@@ -261,7 +262,7 @@
 
   Repurposing a type name in this way fails to optimize clarity and expressivity. Instead, strive to choose a name that expresses the entity’s role.
 
-  这里需要再次提醒一遍，单纯的重复类型名称对传递清晰的意图和提升表达性来说，帮助并不大。相反，你应该尽量选用那些表明实体作用的名字。
+  这里需要再提醒一遍，单纯的重复类型名称对传递清晰的意图和提升表达性来说，帮助并不大。相反，你应该尽量选用那些表明实体作用的名字。
 
   ```swift
   👍👍👍
@@ -276,7 +277,7 @@
 
   If an associated type is so tightly bound to its protocol constraint that the protocol name is the role, avoid collision by appending Protocol to the protocol name:
 
-  如果某个关联类型和相关协议的关联度非常高，会导致这个协议名就是命名此关联类型的最佳选择，可以通过在协议后面增加 `protocol` 来避免冲突：
+  如果关联类型（associated type）和遵循的协议命名冲突，可以在协议名后面加上 `protocol`：
 
   ```swift
   protocol Sequence {
@@ -291,7 +292,7 @@
 
   Especially when a parameter type is `NSObject`, `Any`, `AnyObject`, or a fundamental type such `Int` or `String`, type information and context at the point of use may not fully convey intent. In this example, the declaration may be clear, but the use site is vague.
 
-  当参数类型是 `NSObject`、`Any`、 `AnyObject` 或者像 `Int`、`String` 的时候，调用处的类型信息和上下文环境可能无法完全表明函数意图。在下面的例子中，它的声明看起来语义明确，但在从调用这的角度来看，就显得不够清晰。
+  当参数类型是 `NSObject`、`Any`、`AnyObject` 或者是基础类型比如 `Int`、`String` 时，调用处的类型信息和上下文环境可能无法完全表明函数意图。在下面的例子中，它的声明看起来语义明确，但从调用者的角度来看，就显得不够清晰。
 
   ```swift
   👎👎👎
@@ -312,7 +313,7 @@
 ### 流畅的使用体验（Strive for Fluent Usage）
 
 * **Prefer method and function names that make use sites form grammatical English phrases.**
-* **在调用方法或函数的时候，最好能够使其成为符合英语语法规范的短语。**
+* **方法或者函数名最好能在调用处形成符合语法规范的英语短语。**
 
   ```swift
   👍👍👍
@@ -330,7 +331,7 @@
 
   It is acceptable for fluency to degrade after the first argument or two when those arguments are not central to the call’s meaning:
 
-  为了使用起来更流畅，可以牺牲函数中第一个或者第二个参数后面的命名质量，但这一妥协需要建立在这些改动不会影响整个 API 的关键语义。
+  为了使用起来更流畅，可以从第二个或者第三个参数开始降低命名要求，前提是这些参数不影响整个 API 的语义。
 
   ```swift
   AudioUnit.instantiate(
@@ -344,13 +345,11 @@
 
 * The first argument to **initializer and factory methods calls** should not form a phrase starting with the base name, e.g. `x.makeWidget(cogCount: 47)`
 
-* 调用**构造器和[工厂方法](https://en.wikipedia.org/wiki/Factory_method_pattern)** 时，根据自身类型组成的短语不应该包含第一个参数名，如：`x.makeWidget(cogCount: 47)`
-
-  > 译者注：base 在这里理解为类，结构体这样的类型，base name 就是类名，结构体名称的统称。
+* **构造器和 [工厂方法](https://en.wikipedia.org/wiki/Factory_method_pattern)** 的第一个参数命名不应该考虑方法名，应该独立命名，如：`x.makeWidget(cogCount: 47)`
 
   For example, the first arguments to these calls do not read as part of the same phrase as the base name:
 
-  举个例子，下面调用所组成的短语，不包含第一个参数名：：
+  下面这些方法调用中，第一个参数并没有和方法名组成连续的短语：
 
   ```swift
   👍👍👍
@@ -361,7 +360,7 @@
 
   In the following, the API author has tried to create grammatical continuity with the first argument.
   
-  在下面的例子中，API 作者试图将第一个参数名也纳入到短语中。
+  下面的例子中，API 作者试图将第一个参数名和方法名拼成连续的短语。
 
   ```swift
   👎👎👎
@@ -372,7 +371,7 @@
 
   In practice, this guideline along with those for [argument labels](https://swift.org/documentation/api-design-guidelines/#argument-labels) means the first argument will have a label unless the call is performing a [value preserving type conversion](https://swift.org/documentation/api-design-guidelines/#type-conversion).
   
-  实际上，本规则连同[实参标签]()的相关规则，意味着第一个参数一般都会有标签，除非执行的是[值保留类型转换]()操作。
+  在实际使用中，本规则和 [实参标签]() 的相关规则组合起来，意味着第一个参数一般都会有标签，除非执行的是 [值保留类型转换]() 操作。
 
   ```swift
   let rgbForeground = RGBColor(cmykForeground)
@@ -388,7 +387,7 @@
 
   * Those with side-effects should read as imperative verb phrases, e.g., print(x), x.sort(), x.append(y).
 
-  * 有附加效果的方法和函数读起来应该像祈使动词，例如，`print(x)`，`x.sort()`，`x.append(y)`。
+  * 有副作用的方法和函数读起来应该像祈使动词，例如，`print(x)`，`x.sort()`，`x.append(y)`。
 
   * **Name Mutating/nonmutating method pairs** consistently. A mutating method will often have a nonmutating variant with similar semantics, but that returns a new value rather than updating an instance in-place.
 
@@ -420,7 +419,7 @@
 
       * When adding “ed” is not grammatical because the verb has a direct object, name the nonmutating variant using the verb’s present participle, by appending “ing.”
 
-      * 如果由于动词后面直接跟随一个对象，无法添加 “ed” 时，，则使用现在分词命名不可变方法，即后缀 “ing”。
+      * 如果由于动词后面直接跟随一个对象，无法添加 “ed” 时，使用现在分词命名不可变方法，即后缀 “ing”。
 
         ```swift
         /// Strips all the newlines from `self`
@@ -444,7 +443,7 @@
 
 * **Uses of Boolean methods and properties should read as assertions about the receiver** when the use is nonmutating, e.g. `x.isEmpty`, `line1.intersects(line2)`.
 
-* **对于是返回值是布尔类型的方法和属性，读起来应该像是对被调用对象的断言**，其使用场景是不可变方法。例如，`x.isEmpty`，`line1.intersects(line2)`。
+* **对于返回值是布尔类型的方法和属性，读起来应该像是对被调用对象的断言**，其使用场景是不可变方法。例如，`x.isEmpty`，`line1.intersects(line2)`。
 
 * **Protocols that describe what something is should read as nouns** (e.g. `Collection`).
 
@@ -468,22 +467,22 @@
 
 * **Avoid obscure terms** if a more common word conveys meaning just as well. Don’t say “epidermis” if “skin” will serve your purpose. Terms of art are an essential communication tool, but should only be used to capture crucial meaning that would otherwise be lost.
 
-* **避免使用晦涩的术语**，特别是在有一个常见词汇能够表达同样含义时。例如，如果 "skin" 能够满足表述需求，就不要使用 "epidermis" 。术语是重要的交流工具，但应该仅在其他表述方式会丢失关键意义时才使用这些比较生僻的术语。
+* **避免使用晦涩的术语**，特别是在有一个常见词汇能够表达同样含义时。例如，如果 ”skin“ 能够满足表述需求，就不要使用 ”epidermis“。术语是重要的交流工具，但应该仅在其他表述方式会丢失关键意义时，才使用这些比较生僻的术语。
 
 * **Stick to the established meaning** if you do use a term of art.
 * 在坚持使用术语的情况下，**应该紧扣其明确的含义**。
 
   The only reason to use a technical term rather than a more common word is that it precisely expresses something that would otherwise be ambiguous or unclear. Therefore, an API should use the term strictly in accordance with its accepted meaning.
 
-  使用术语而非常见词汇的唯一原因就是其能够准确表述事物，否则含义便会模糊，甚至造成歧义。因此， API 应该严格按照既定含义使用术语。
+  使用术语而非常见词汇的唯一原因就是其能够准确表述事物，否则含义便会模糊，甚至造成歧义。因此，API 应该严格按照既定含义使用术语。
 
   * **Don’t surprise an expert**: anyone already familiar with the term will be surprised and probably angered if we appear to have invented a new meaning for it.
 
-  * **不要惊吓专家**：如果那些对某个术语十分熟悉的人发现 API 的设计者为该术语发明了新的含义。他们可能会感到惊讶甚至愤怒。
+  * **别吓着专家**：如果对某个术语十分熟悉的人发现 API 设计者为该术语发明了新的含义。他们可能会感到惊讶甚至愤怒。
 
   * **Don’t confuse a beginner**: anyone trying to learn the term is likely to do a web search and find its traditional meaning.
 
-  * **不要迷惑新手**：尝试学习术语的人一般都会通过网络搜索的方式查询术语的原始含义。
+  * **别迷惑新手**：尝试学习术语的人一般都会通过网络搜索的方式查询术语的原始含义。
 
 * **Avoid abbreviations**. Abbreviations, especially non-standard ones, are effectively terms-of-art, because understanding depends on correctly translating them into their non-abbreviated forms.
 
@@ -499,11 +498,11 @@
 
   It is better to name a contiguous data structure `Array` than to use a simplified term such as `List`, even though a beginner might grasp of the meaning of `List` more easily. Arrays are fundamental in modern computing, so every programmer knows—or will soon learn—what an array is. Use a term that most programmers are familiar with, and their web searches and questions will be rewarded.
 
-  例如，最好将一个连续的数据结构命名为 `Array` ，而非更简单的 `List`，虽然对于新手来说，后者的含义更容易掌握。数组是现代计算机科学的基础数据结构，所以每个程序员都知道——或者很快就能理解——什么是数组。使用大多数程序员所熟悉的术语，这样，即便有问题，互联网和其他人也能够提供帮助。
+  例如，最好将一个连续的数据结构命名为 `Array`，而非更简单的 `List`，虽然对于新手来说，后者的含义更容易掌握。数组是现代计算机科学的基础数据结构，所以每个程序员都知道——或者很快就能理解——什么是数组。使用大多数程序员所熟悉的术语，这样，即便有问题，互联网和其他人也能够提供帮助。
 
   Within a particular programming domain, such as mathematics, a widely precedented term such as `sin(x)` is preferable to an explanatory phrase such as `verticalPositionOnUnitCircleAtOriginOfEndOfRadiusWithAngle(x)`. Note that in this case, precedent outweighs the guideline to avoid abbreviations: although the complete word is sine, “sin(x)” has been in common use among programmers for decades, and among mathematicians for centuries.
   
-  在某些特定的编程领域，例如数学， 诸如 `sin(x)` 这样已经广为人们所接受的术语，要比诸如 `verticalPositionOnUnitCircleAtOriginOfEndOfRadiusWithAngle(x)` 这样解释性的命名好的多。注意，这里先例打破了避免缩写的规则：尽管单词的完整拼写是 `sine`，但 "`sin(x)`"已经被程序员使用了数十年，在数学中更是数百年。
+  在某些特定的编程领域，例如数学， 诸如 `sin(x)` 这样已经广为人们所接受的术语，要比诸如 `verticalPositionOnUnitCircleAtOriginOfEndOfRadiusWithAngle(x)` 这样解释性的命名好的多。注意，这里先例打破了避免缩写的规则：尽管单词的完整拼写是 `sine`，但 ”`sin(x)`“已经被程序员使用了数十年，在数学中更是数百年。
 
 ## 约定（Conventions）
 
@@ -511,13 +510,13 @@
 
 * **Document the complexity of any computed property that is not O(1)**. People often assume that property access involves no significant computation, because they have stored properties as a mental model. Be sure to alert them when that assumption may be violated.
 
-* **对于复杂度不是O(1)的计算型属性，要通过注释特别说明。** 人们总是认为属性访问不牵扯大量计算，因为在人类的心智模型里会潜意识的认为当前访问的只是一个存储型属性。当这个假设被打破时，有必要提醒他们。
+* **对于复杂度不是 O(1) 的计算型属性，要通过注释特别说明。** 人们总是认为属性访问不牵扯大量计算，因为在人类的心智模型里会潜意识的认为当前访问的只是一个存储型属性。当这个假设被打破时，有必要提醒他们。
 
   > mental model 是指心智模型，可以通俗的理解为人们的思考方式或者思维过程，wiki 链接：[https://en.wikipedia.org/wiki/Mental_model](https://en.wikipedia.org/wiki/Mental_model)
 
 * **Prefer methods and properties to free functions.** Free functions are used only in special cases:
 
-* **优先选择方法或属性，而非全局函数。** 后者只在下述情况中使用：
+* **优先选择方法或属性，而非全局函数。**后者只在下述情况中使用：
 
   > 译者注：free function 在这里翻译为全局函数，[详情请点击这里](https://en.wikipedia.org/wiki/Free_function)
 
@@ -548,7 +547,7 @@
 
   [Acronyms and initialisms](https://en.wikipedia.org/wiki/Acronym) that commonly appear as all upper case in American English should be uniformly up- or down-cased according to case conventions:
   
-  对于那些在美语中全部以大写的形式出现的[首字母缩写](https://en.wikipedia.org/wiki/Acronym)，要根据大小写惯例统一大写或小写：
+  对于那些在美语中全部以大写的形式出现的 [首字母缩写](https://en.wikipedia.org/wiki/Acronym)，要根据大小写惯例统一大写或小写：
 
   ```swift
   var utf8Bytes: [UTF8.CodeUnit]
@@ -571,7 +570,7 @@
 
   For example, the following is encouraged, since the methods do essentially the same things:
   
-  例如，下面的命名方式是值得认可的，因为这些方法本质上是在做同一件事：
+  例如，下面的命名方式值得认可，因为这些方法本质上是在做同一件事：
 
   ```swift
   👍👍👍
@@ -589,7 +588,7 @@
 
   And since geometric types and collections are separate domains, this is also fine in the same program:
   
-  由于几何类型和集合类型所处的范围不同，下面的命名方式也是可以的：
+  由于几何类型和集合类型所处的范围不同，下面的命名方式也不错：
 
   ```swift
   👍👍👍
@@ -617,7 +616,7 @@
 
   Lastly, avoid “overloading on return type” because it causes ambiguities in the presence of type inference.
   
-  最后，避免“重载返回类型”，因为这样会导致类型推断系统产生歧义。
+  最后，避免“重载返回类型”，这样会导致类型推断系统产生歧义。
 
   > 译者注：overloading on return type 在这里翻译为重载返回类型，[详情请点击这里](https://stackoverflow.com/questions/442026/function-overloading-by-return-type)
 
@@ -700,7 +699,7 @@ func move(from start: Point, to end: Point)
 
   Default arguments are generally preferable to the use of method families, because they impose a lower cognitive burden on anyone trying to understand the API.
   
-  默认参数通常适用于一组类似的方法， 因为这样可以降低理解 API 的认知负担。
+  默认参数通常适用于一组类似的方法，这样可以降低理解 API 的认知负担。
 
   ```swift
   👍👍👍
@@ -715,7 +714,7 @@ func move(from start: Point, to end: Point)
 
   The above may not be simple, but it is much simpler than:
   
-  上述方法可能看起来不怎么简单，但相比于下面的方法来说，还是较为简单的：
+  上述方法可能看起来不怎么简单，但比下面这些强多了：
 
   ```swift
   👎👎👎
@@ -736,7 +735,7 @@ func move(from start: Point, to end: Point)
 
   Every member of a method family needs to be separately documented and understood by users. To decide among them, a user needs to understand all of them, and occasional surprising relationships—for example, `foo(bar: nil)` and `foo()` aren’t always synonyms—make this a tedious process of ferreting out minor differences in mostly identical documentation. Using a single method with defaults provides a vastly superior programmer experience.
 
-  每个方法都要分开注释；为了选择使用哪一个，用户必须全部理解，并搞清它们之间的关系。有时，这些关系让人感到诧异，例如 `foo(bar: nil)` 和 `foo()` 的作用并不总是相同 — 这种在文档中寻找细微区别的工作是让人厌恶的。利用默认参数，将这些类似的方法简化为一个方法，极大提升了用户体验。
+  每个方法都要分开注释；为了选择使用哪一个，用户必须全部理解，并搞清它们之间的关系。有时，这些关系让人感到诧异，例如 `foo(bar: nil)` 和 `foo()` 的作用并不总是相同——这种在文档中寻找细微区别的工作是让人厌恶的。利用默认参数，将这些类似的方法简化为一个方法，会极大提升用户体验。
 
 * **Prefer to locate parameters with defaults toward the end** of the parameter list. Parameters without defaults are usually more essential to the semantics of a method, and provide a stable initial pattern of use where methods are invoked.
 
@@ -751,7 +750,7 @@ x.move(from: x, to: y)
 
 * **Omit all labels when arguments can’t be usefully distinguished**, e.g. `min(number1, number2), zip(sequence1, sequence2).`
 
-* **如果区分参数的意义不大，则可以省略所有实参标签**。例如：`min(number1, number2)`, `zip(sequence1, sequence2)`。
+* **如果区分参数的意义不大，可以省略所有实参标签**。例如：`min(number1, number2)`, `zip(sequence1, sequence2)`。
 
 * **In initializers that perform value preserving type conversions, omit the first argument label**, e.g. `Int64(someUInt32)`
 
@@ -777,7 +776,7 @@ x.move(from: x, to: y)
 
   而对于“值省略类型转换”来说，最好使用第一个标签描述所省略的内容。
 
-  > 此处将 narrowing type conversions 翻译为值省略类型转换，相关链接参考：[https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions)
+  > 译者注：此处将 narrowing type conversions 翻译为值省略类型转换，相关链接参考：[https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions)
 
   ```swift
   extension UInt32 {
@@ -793,19 +792,19 @@ x.move(from: x, to: y)
 
   > A value preserving type conversion is a [monomorphism]((https://en.wikipedia.org/wiki/Monomorphism)), i.e. every difference in the value of the source results in a difference in the value of the result. For example, conversion from Int8 to Int64 is value preserving because every distinct Int8 value is converted to a distinct Int64 value. Conversion in the other direction, however, cannot be value preserving: Int64 has more possible values than can be represented in an Int8. 
   >
-  >值保留类型转换是[单态](https://en.wikipedia.org/wiki/Monomorphism)，即一个值对应一个结果。例如，将一个`Int8`值转换为一个`Int64`值属于这种操作，因为不同的`Int8`值都对应不同的`Int64`值。反过来就不是：`Int64`可能的值要比`Int8`能够表示的值多得多。
+  >值保留类型转换是 [单态](https://en.wikipedia.org/wiki/Monomorphism)，即一个值对应一个结果。例如，将一个 `Int8` 值转换为一个 `Int64` 值属于这种操作，因为不同的 `Int8` 值都对应不同的 `Int64` 值。反过来就不是：`Int64` 能表示的值要比 `Int8` 多得多。
   >
   > Note: the ability to retrieve the original value has no bearing on whether a conversion is value preserving.
   >  
-  > 注意：能否追溯原始值，同是不是值保留类型转换没有联系。
+  > 注意：能否追溯原始值，和是不是值保留类型转换没有联系。
 
 * **When the first argument forms part of a `prepositional phrase`, give it an argument label**. The argument label should normally begin at the preposition, e.g. `x.removeBoxes(havingLength: 12)`.
 
-* **如果第一个参数参与组成[介词短语](https://en.wikipedia.org/wiki/Adpositional_phrase#Prepositional_phrases)，则需要使用实参标签**。实参标签一般起[介词](https://en.wikipedia.org/wiki/Preposition_and_postposition)的作用。例如，`x.removeBoxed(havingLength: 12)`。
+* **如果第一个参数参与组成 [介词短语](https://en.wikipedia.org/wiki/Adpositional_phrase#Prepositional_phrases)，则需要使用实参标签**。实参标签一般起 [介词](https://en.wikipedia.org/wiki/Preposition_and_postposition) 的作用。例如，`x.removeBoxed(havingLength: 12)`。
 
   An exception arises when the first two arguments represent parts of a single abstraction.
 
-  如果前两个或多个参数共同组成一个抽象概念就不需要遵守上面的约定
+  如果前两个或多个参数共同组成一个抽象概念，就不需要遵守上面的约定。
 
   ```swift
   👎👎👎
@@ -815,7 +814,7 @@ x.move(from: x, to: y)
 
   In such cases, begin the argument label after the preposition, to keep the abstraction clear.
 
-  这时，将介词从参数标签中抽取并提前，会使该方法的语义更清晰。
+  这种情况下，将介词从参数标签中抽取并提前，会使该方法的语义更清晰。
 
   ```swift
   👍👍👍
@@ -825,11 +824,11 @@ x.move(from: x, to: y)
 
 * **Otherwise, if the first argument forms part of a grammatical phrase, omit its label**, appending any preceding words to the base name, e.g. `x.addSubview(y)`
 
-* **否则，如果第一个参数组成的是一个常规短语，则省略标签**，在基础名中补全短语。例如，`x.addSubView(y)`。
+* **否则，如果第一个参数组成的是一个常规短语，则省略标签**，在基础名中补全短语。例如 `x.addSubView(y)`。
 
   This guideline implies that if the first argument doesn’t form part of a grammatical phrase, it should have a label.
 
-  本规则意味着如果第一个参数不组成任何短语，应该给其加上标签。
+  这条规则隐含的意思是，如果第一个参数不组成任何短语，应该给其加上标签。
 
   ```swift
   👍👍👍
@@ -850,7 +849,7 @@ x.move(from: x, to: y)
 
   Note also that arguments with default values can be omitted, and in that case do not form part of a grammatical phrase, so they should always have labels.
 
-  另外，有默认值的参数可以省略，因此这些参数不参与短语的组成，所以它们总是有标签。
+  另外，有默认值的参数可以省略。在这种情况下，这些参数不应该参与短语的组成，所以它们总是有标签。
 
 * **Label all other arguments.**
 
@@ -886,11 +885,11 @@ x.move(from: x, to: y)
 
   Names used for closure parameters should be chosen like parameter names for top-level functions. Labels for closure arguments that appear at the call site are not supported.
 
-  在命名函数里的闭包参数时，相关要求应当与函数里的[形参]()标准一致。在调用的时候，不支持闭包参数里的参数标签
+  在命名函数里的闭包参数时，相关要求应当与函数里的 [形参]() 标准一致。在调用的时候，不支持闭包参数里的参数标签
 
 * Take extra care with unconstrained polymorphism (e.g. `Any`, `AnyObject`, and unconstrained generic parameters) to avoid ambiguities in overload sets.
 
-* 需要格外注意不受约束，具有多态的类型（例如，`Any`，`AnyObject` 及不受限的范型参数）在重载时产生的歧义。
+* 需要格外注意不受约束、具有多态的类型（例如，`Any`，`AnyObject` 及不受限的范型参数）在重载时产生的歧义。
 
   For example, consider this overload set:
 
@@ -938,4 +937,4 @@ x.move(from: x, to: y)
   
   Notice how the new name better matches the documentation comment. In this case, the act of writing the documentation comment actually brought the issue to the API author’s attention.
 
-  注意新方法的实参标签是如何同文档呼应的。这时，通过书写文档，API 设计者能够注意到潜在的问题。
+  可以看到，新名字能更好的对应文档注释。这种情况下，写注释其实能让 API 设计者注意到潜在的问题。
