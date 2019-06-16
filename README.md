@@ -56,7 +56,7 @@
 
 * **传达清晰的意图比文字简洁更重要**。尽管 Swift 代码可以写的十分小巧紧凑，但用最少的字符来书写代码并非 Swift 的设计本意。如果 Swift 代码看起来非常简洁，那只是强类型系统和各种特性带来的副作用，无形中减少了模板代码（boilerplate）的使用。
   
-  >译者注：boilerplate 是指 boilerplate code, [详情请点击这里](https://en.wikipedia.org/wiki/Boilerplate_code)
+  >译者注：boilerplate 是指 boilerplate code, [详情请点击这里](https://en.wikipedia.org/wiki/Boilerplate_code)。
 
 * **Write a documentation comment** for every declaration. Insights gained by writing documentation can have a profound impact on your design, so don’t put it off.
 
@@ -68,7 +68,7 @@
 
   * **Use Swift’s dialect of Markdown.**
 
-  * **使用 Swift 提供的 [特别版 Markdown 语法](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/)**
+  * **使用 Swift 提供的 [特别版 Markdown 语法](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/)**。
 
   * **Begin with a summary** that describes the entity being declared. Often, an API can be completely understood from its declaration and its summary.
 
@@ -88,11 +88,11 @@
 
     * **用一个语句片段进行描述**，并用句号结尾。不要写一个复杂的句子。
 
-      > 译者注：sentence fragment 是指能表达明确含义但从语法上并不完整的句子，[详情请点击这里](https://en.wiktionary.org/wiki/sentence_fragment)
+      > 译者注：sentence fragment 是指能表达明确含义但从语法上并不完整的句子，[详情请点击这里](https://en.wiktionary.org/wiki/sentence_fragment)。
 
     * **Describe what a function or method does and what it returns**, omitting null effects and Void returns:
 
-    * **描述一个函数或方法做什么，以及会返回什么**，对于那些无返回值或者什么都不做的情况直接省略。
+    * **描述一个函数或方法做什么，以及会返回什么**，对于那些无返回值或者什么都不做的情况直接省略：
 
       ```swift
       /// Inserts `newHead` at the beginning of `self`.
@@ -147,9 +147,6 @@
   * **Optionally, continue** with one or more paragraphs and bullet items. Paragraphs are separated by blank lines and use complete sentences.
 
   * **如果需要，可以继续添加**一个或多个段落并有序排列这些条目。但是段落应该使用空行隔开，并使用完整的句子进行描述。
-
-    > 译者注：bullet 应该是指 bullet journal 里的排序方式: [详情请点击这里](https://bulletjournal.com/pages/learn)
-    > 校对：bullet item 是通用名称，就是指“列表”，不需要额外解释。
 
     ```swift
     /// Writes the textual representation of each    ← Summary
@@ -233,7 +230,7 @@
 
   In this case, the word Element adds nothing salient at the call site. This API would be better:
 
-  在上面的代码中，`Element` 在调用时没有提供任何有效的信息， API 修改成下面这样会更好。
+  在上面的代码中，`Element` 在调用时没有提供任何有效的信息，API 修改成下面这样会更好。
 
     ```swift
     👍👍👍
@@ -371,7 +368,7 @@
 
   In practice, this guideline along with those for [argument labels](https://swift.org/documentation/api-design-guidelines/#argument-labels) means the first argument will have a label unless the call is performing a [value preserving type conversion](https://swift.org/documentation/api-design-guidelines/#type-conversion).
   
-  在实际使用中，本规则和 [实参标签]() 的相关规则组合起来，意味着第一个参数一般都会有标签，除非执行的是 [值保留类型转换]() 操作。
+  在实际使用中，本规则和 [实参标签](#argument-labels) 的相关规则组合起来，意味着第一个参数一般都会有标签，除非执行的是 [值保留类型转换](#type-conversion) 操作。
 
   ```swift
   let rgbForeground = RGBColor(cmykForeground)
@@ -404,7 +401,7 @@
 
       * Prefer to name the nonmutating variant using the verb’s past participle (usually appending “ed”):
 
-      * 命名不可变方法，最好使用过去分词(通常是增加后缀 “ed” )：
+      * 命名不可变方法，最好使用过去分词（通常是增加后缀 “ed”）：
 
         ```swift
         /// Reverses `self` in-place.
@@ -447,7 +444,7 @@
 
 * **Protocols that describe what something is should read as nouns** (e.g. `Collection`).
 
-* **描述事物的协议，读起来应该像名词**（例如，Collection）。
+* **描述事物的协议，读起来应该像名词**（例如，`Collection`）。
 
 * **Protocols that describe a capability should be named using the suffixes `able`, `ible`, or `ing`**(e.g. Equatable, ProgressReporting).
 
@@ -463,7 +460,7 @@
 > noun - a word or phrase that has a precise, specialized meaning within a particular field or profession.  
 >
 > 术语的艺术  
-> 名词 - 在某个领域或行业内，有着明确特殊含义的词或短语。
+> 名词——在某个领域或行业内，有着明确特殊含义的词或短语。
 
 * **Avoid obscure terms** if a more common word conveys meaning just as well. Don’t say “epidermis” if “skin” will serve your purpose. Terms of art are an essential communication tool, but should only be used to capture crucial meaning that would otherwise be lost.
 
@@ -502,7 +499,7 @@
 
   Within a particular programming domain, such as mathematics, a widely precedented term such as `sin(x)` is preferable to an explanatory phrase such as `verticalPositionOnUnitCircleAtOriginOfEndOfRadiusWithAngle(x)`. Note that in this case, precedent outweighs the guideline to avoid abbreviations: although the complete word is sine, “sin(x)” has been in common use among programmers for decades, and among mathematicians for centuries.
   
-  在某些特定的编程领域，例如数学， 诸如 `sin(x)` 这样已经广为人们所接受的术语，要比诸如 `verticalPositionOnUnitCircleAtOriginOfEndOfRadiusWithAngle(x)` 这样解释性的命名好的多。注意，这里先例打破了避免缩写的规则：尽管单词的完整拼写是 `sine`，但 ”`sin(x)`“已经被程序员使用了数十年，在数学中更是数百年。
+  在某些特定的编程领域，例如数学， 诸如 `sin(x)` 这样已经广为人们所接受的术语，要比诸如 `verticalPositionOnUnitCircleAtOriginOfEndOfRadiusWithAngle(x)` 这样解释性的命名好的多。注意，这里先例打破了避免缩写的规则：尽管单词的完整拼写是 `sine`，但 ”`sin(x)`“ 已经被程序员使用了数十年，在数学中更是数百年。
 
 ## 约定（Conventions）
 
@@ -566,7 +563,7 @@
 
 * **Methods can share a base name** when they share the same basic meaning or when they operate in distinct domains.
 
-* 当某些方法的含义基本一致，或者只是在不同范围内使用的同类型方法，那么它们可以**共享一个基础方法名。**
+* 当某些方法的含义基本一致，或者只是在不同范围内使用的同类型方法，那么它们可以**共享一个基础方法名**。
 
   For example, the following is encouraged, since the methods do essentially the same things:
   
@@ -618,7 +615,7 @@
   
   最后，避免“重载返回类型”，这样会导致类型推断系统产生歧义。
 
-  > 译者注：overloading on return type 在这里翻译为重载返回类型，[详情请点击这里](https://stackoverflow.com/questions/442026/function-overloading-by-return-type)
+  > 译者注：overloading on return type 在这里翻译为重载返回类型，[详情请点击这里](https://stackoverflow.com/questions/442026/function-overloading-by-return-type)。
 
 
   ```swift
@@ -741,6 +738,7 @@ func move(from start: Point, to end: Point)
 
 * **将具有默认参数的参数项放到方法最后**。从语义上来说，没有默认参数的参数项对于方法来说更为重要，并且这样做可以在调用时提供稳定的格式。
 
+<a name="argument-labels"></a>
 ### 实参标签（Argument Labels）
 
 ```swift
@@ -774,9 +772,10 @@ x.move(from: x, to: y)
 
   In “narrowing” type conversions, though, a label that describes the narrowing is recommended.
 
+  <a name="type-conversion"></a>
   而对于“值省略类型转换”来说，最好使用第一个标签描述所省略的内容。
 
-  > 译者注：此处将 narrowing type conversions 翻译为值省略类型转换，相关链接参考：[https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions)
+  > 译者注：此处将 narrowing type conversions 翻译为值省略类型转换，相关链接参考：[https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions)。
 
   ```swift
   extension UInt32 {
@@ -885,7 +884,7 @@ x.move(from: x, to: y)
 
   Names used for closure parameters should be chosen like parameter names for top-level functions. Labels for closure arguments that appear at the call site are not supported.
 
-  在命名函数里的闭包参数时，相关要求应当与函数里的 [形参]() 标准一致。在调用的时候，不支持闭包参数里的参数标签
+  在命名闭包参数时，应当与顶层函数的标准一致。在调用的时候，不支持闭包参数里的参数标签。
 
 * Take extra care with unconstrained polymorphism (e.g. `Any`, `AnyObject`, and unconstrained generic parameters) to avoid ambiguities in overload sets.
 
