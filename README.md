@@ -35,18 +35,18 @@
 
 ## 目录（Table of Contents）
 
-* 基本准则（Fundamentals）
-* 命名（Naming）
-  * 明确的使用含义（Promote Clear Usage）
-  * 流畅的使用体验（Strive for Fluent Usage）
-  * 合理的使用术语（Use Terminology Well）
-* 约定（Conventions）
-  * 基本约定（General Conventions）
-  * 形参（Parameters）
-  * 实参标签（Argument Labels）
-* 特殊说明（Special Instructions）
+* [基本准则/Fundamentals](##基本准则/Fundamentals)
+* [命名/Naming](##命名/Naming)
+  * [明确的使用含义/Promote Clear Usage](###明确的使用含义/Promote-Clear-Usage)
+  * [流畅的使用体验/Strive for Fluent Usage](###流畅的使用体验/Strive-for-Fluent-Usage)
+  * [合理的使用术语/Use Terminology Well](###合理的使用术语/Use-Terminology-Well)
+* [约定/Conventions](##约定/Conventions)
+  * [基本约定/General Conventions](###基本约定/General-Conventions)
+  * [形参/Parameters](###形参/Parameters)
+  * [实参标签/Argument Labels](###实参标签/Argument-Labels)
+* [特殊说明/Special Instructions](##特殊说明/Special-Instructions)
 
-## 基本准则（Fundamentals）
+## 基本准则/Fundamentals
 
 * **Clarity at the point of use** is your most important goal. Entities such as methods and properties are declared only once but used repeatedly. Design APIs to make those uses clear and concise. When evaluating a design, reading a declaration is seldom sufficient; always examine a use case to make sure it looks clear in context.
 
@@ -185,9 +185,9 @@
       |[Requires](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/Requires.html)|[Returns](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/Returns.html)|[SeeAlso](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/SeeAlso.html)|[Since](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/Since.html)|
       |[Throws](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/Throws.html)|[ToDo](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/Todo.html)|[Version](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/Version.html)|[Warning](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/Warning.html)|
 
-## 命名（Naming）
+## 命名/Naming
 
-### 明确的使用含义（Promote Clear Usage）
+### 明确的使用含义/Promote Clear Usage
 
 * **Include all the words needed to avoid ambiguity** for a person reading code where the name is used.
 
@@ -307,7 +307,7 @@
   grid.addObserver(self, forKeyPath: graphics) // clear
   ```
 
-### 流畅的使用体验（Strive for Fluent Usage）
+### 流畅的使用体验/Strive for Fluent Usage
 
 * **Prefer method and function names that make use sites form grammatical English phrases.**
 * **方法或者函数名最好能在调用处形成符合语法规范的英语短语。**
@@ -368,7 +368,7 @@
 
   In practice, this guideline along with those for [argument labels](https://swift.org/documentation/api-design-guidelines/#argument-labels) means the first argument will have a label unless the call is performing a [value preserving type conversion](https://swift.org/documentation/api-design-guidelines/#type-conversion).
   
-  在实际使用中，本规则和 [实参标签](#argument-labels) 的相关规则组合起来，意味着第一个参数一般都会有标签，除非执行的是 [值保留类型转换](#type-conversion) 操作。
+  在实际使用中，本规则和 [实参标签](###实参标签/Argument-Labels) 的相关规则组合起来，意味着第一个参数一般都会有标签，除非执行的是 [值保留类型转换](#type-conversion) 操作。
 
   ```swift
   let rgbForeground = RGBColor(cmykForeground)
@@ -454,7 +454,7 @@
 
 * 其他**类型，属性，变量以及常量的名称，读起来应该像名词**。
 
-### 合理的使用术语（Use Terminology Well）
+### 合理的使用术语/Use Terminology Well
 
 > Term of Art  
 > noun - a word or phrase that has a precise, specialized meaning within a particular field or profession.  
@@ -501,19 +501,19 @@
   
   在某些特定的编程领域，例如数学， 诸如 `sin(x)` 这样已经广为人们所接受的术语，要比诸如 `verticalPositionOnUnitCircleAtOriginOfEndOfRadiusWithAngle(x)` 这样解释性的命名好的多。注意，这里先例打破了避免缩写的规则：尽管单词的完整拼写是 `sine`，但 ”`sin(x)`“ 已经被程序员使用了数十年，在数学中更是数百年。
 
-## 约定（Conventions）
+## 约定/Conventions
 
-### 基本约定（General Conventions）
+### 基本约定/General Conventions
 
 * **Document the complexity of any computed property that is not O(1)**. People often assume that property access involves no significant computation, because they have stored properties as a mental model. Be sure to alert them when that assumption may be violated.
 
-* **对于复杂度不是 O(1) 的计算型属性，要通过注释特别说明。** 人们总是认为属性访问不牵扯大量计算，因为在人类的心智模型里会潜意识的认为当前访问的只是一个存储型属性。当这个假设被打破时，有必要提醒他们。
+* **对于复杂度不是 O(1) 的计算型属性，要通过注释特别说明** 。人们总是认为属性访问不牵扯大量计算，因为在人类的心智模型里会潜意识的认为当前访问的只是一个存储型属性。当这个假设被打破时，有必要提醒他们。
 
-  > mental model 是指心智模型，可以通俗的理解为人们的思考方式或者思维过程，wiki 链接：[https://en.wikipedia.org/wiki/Mental_model](https://en.wikipedia.org/wiki/Mental_model)
+  > mental model 是指心智模型，可以通俗的理解为人们的思考方式或者思维过程，[详情请点击这里](https://en.wikipedia.org/wiki/Mental_model)
 
-* **Prefer methods and properties to free functions.** Free functions are used only in special cases:
+* **Prefer methods and properties to free functions**. Free functions are used only in special cases:
 
-* **优先选择方法或属性，而非全局函数。**后者只在下述情况中使用：
+* **优先选择方法或属性，而非全局函数**。后者只在下述情况中使用：
 
   > 译者注：free function 在这里翻译为全局函数，[详情请点击这里](https://en.wikipedia.org/wiki/Free_function)
 
@@ -631,7 +631,7 @@
   }
   ```
 
-### 形参（Parameters）
+### 形参/Parameters
 
 ```swift
 func move(from start: Point, to end: Point)
@@ -738,8 +738,7 @@ func move(from start: Point, to end: Point)
 
 * **将具有默认参数的参数项放到方法最后**。从语义上来说，没有默认参数的参数项对于方法来说更为重要，并且这样做可以在调用时提供稳定的格式。
 
-<a name="argument-labels"></a>
-### 实参标签（Argument Labels）
+### 实参标签/Argument Labels
 
 ```swift
 func move(from start: Point, to end: Point)
@@ -752,6 +751,7 @@ x.move(from: x, to: y)
 
 * **In initializers that perform value preserving type conversions, omit the first argument label**, e.g. `Int64(someUInt32)`
 
+<a name="type-conversion"></a>
 * **如果构造函数进行的是值保留类型转换操作，则省略第一个实参标签**。例如：`Int64(someUint32)`。
 
   The first argument should always be the source of the conversion.
@@ -772,10 +772,9 @@ x.move(from: x, to: y)
 
   In “narrowing” type conversions, though, a label that describes the narrowing is recommended.
 
-  <a name="type-conversion"></a>
   而对于“值省略类型转换”来说，最好使用第一个标签描述所省略的内容。
 
-  > 译者注：此处将 narrowing type conversions 翻译为值省略类型转换，相关链接参考：[https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions)。
+  > 译者注：此处将 narrowing type conversions 翻译为值省略类型转换，[详情请点击这里](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions)
 
   ```swift
   extension UInt32 {
@@ -854,7 +853,7 @@ x.move(from: x, to: y)
 
 * **其他参数都需要加上标签。**
 
-## 特殊说明（Special Instructions）
+## 特殊说明/Special Instructions
 
 * **Label tuple members and name closure parameters where they appear in your API**.
 
