@@ -1,4 +1,4 @@
-# API Design Guidelines 中文版
+# API Design Guidelines 中文版[长期维护项目]
 
 ## 原文地址
 
