@@ -36,16 +36,16 @@
 
 ## 目录（Table of Contents）
 
-* [基本准则/Fundamentals](##基本准则/Fundamentals)
-* [命名/Naming](##命名/Naming)
-  * [明确的使用含义/Promote Clear Usage](###明确的使用含义/Promote-Clear-Usage)
-  * [流畅的使用体验/Strive for Fluent Usage](###流畅的使用体验/Strive-for-Fluent-Usage)
-  * [合理的使用术语/Use Terminology Well](###合理的使用术语/Use-Terminology-Well)
-* [约定/Conventions](##约定/Conventions)
-  * [基本约定/General Conventions](###基本约定/General-Conventions)
-  * [形参/Parameters](###形参/Parameters)
-  * [实参标签/Argument Labels](###实参标签/Argument-Labels)
-* [特殊说明/Special Instructions](##特殊说明/Special-Instructions)
+* [基本准则/Fundamentals](#基本准则Fundamentals)
+* [命名/Naming](#命名Naming)
+  * [明确的使用含义/Promote Clear Usage](#明确的使用含义Promote-Clear-Usage)
+  * [流畅的使用体验/Strive for Fluent Usage](#流畅的使用体验Strive-for-Fluent-Usage)
+  * [合理的使用术语/Use Terminology Well](#合理的使用术语Use-Terminology-Well)
+* [约定/Conventions](#约定Conventions)
+  * [基本约定/General Conventions](#基本约定General-Conventions)
+  * [形参/Parameters](#形参Parameters)
+  * [实参标签/Argument Labels](#实参标签Argument-Labels)
+* [特殊说明/Special Instructions](#特殊说明Special-Instructions)
 
 ## 基本准则/Fundamentals
 
