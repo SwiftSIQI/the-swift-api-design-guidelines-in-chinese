@@ -4,8 +4,12 @@
 
 [英文原版在线版](https://swift.org/documentation/api-design-guidelines/)
 
+[网站的 GitHub 仓库地址](https://github.com/apple/swift-internals/blob/gh-pages/api-design-guidelines/index.md)
+
 ## 更新记录
 
+* 2019.08.24 检索到英文原文的 github 仓库地址，现有翻译的英文版本与最新版一致，无须改动
+ * 与原文 master 分支的 [9c717ac](https://github.com/apple/swift-internals/commit/9c717ac1e29404a504602e842dfe2619c4cf87e5) 节点一致
 * 2019.08.14 与原文对比无更新
 * 2019.06.21 正式发布
 * 2019.06.13 完成初稿
