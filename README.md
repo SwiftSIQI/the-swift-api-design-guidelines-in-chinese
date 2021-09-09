@@ -8,6 +8,7 @@
 
 ## 更新记录
 
+* 2021.09.09 与原文 master 分支的 [5131442](https://github.com/apple/swift-internals/commit/51314422908e17cb5ba4812cf465f9f2110b58de) 节点一致
 * 2020.03.09 与原文对比无更新
 * 2019.11.13 与原文对比无更新
 * 2019.09.16 与原文对比无更新
@@ -502,7 +503,7 @@
 
 * **遵循先例**。如果现有术语已经能够完美表述一个含义，那么就不要为了迁就新手，打破这种先例。
 
-  It is better to name a contiguous data structure `Array` than to use a simplified term such as `List`, even though a beginner might grasp of the meaning of `List` more easily. Arrays are fundamental in modern computing, so every programmer knows—or will soon learn—what an array is. Use a term that most programmers are familiar with, and their web searches and questions will be rewarded.
+  It is better to name a contiguous data structure `Array` than to use a simplified term such as `List`, even though a beginner might grasp the the meaning of `List` more easily. Arrays are fundamental in modern computing, so every programmer knows—or will soon learn—what an array is. Use a term that most programmers are familiar with, and their web searches and questions will be rewarded.
 
   例如，最好将一个连续的数据结构命名为 `Array`，而非更简单的 `List`，虽然对于新手来说，后者的含义更容易掌握。数组是现代计算机科学的基础数据结构，所以每个程序员都知道——或者很快就能理解——什么是数组。使用大多数程序员所熟悉的术语，这样，即便有问题，互联网和其他人也能够提供帮助。
 
