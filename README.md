@@ -8,7 +8,8 @@
 
 ## 更新记录
 
-* 2021.09.09 与原文 master 分支的 [5131442](https://github.com/apple/swift-internals/commit/51314422908e17cb5ba4812cf465f9f2110b58de) 节点一致
+* 2021.09.09 对翻译版本进行更新
+  * 与原文 master 分支的 [5131442](https://github.com/apple/swift-internals/commit/51314422908e17cb5ba4812cf465f9f2110b58de) 节点一致, 2018.12.05
 * 2020.03.09 与原文对比无更新
 * 2019.11.13 与原文对比无更新
 * 2019.09.16 与原文对比无更新
