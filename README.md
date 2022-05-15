@@ -555,7 +555,7 @@
 
   [Acronyms and initialisms](https://en.wikipedia.org/wiki/Acronym) that commonly appear as all upper case in American English should be uniformly up- or down-cased according to case conventions:
   
-  对于那些在美语中全部以大写的形式出现的 [首字母缩写](https://en.wikipedia.org/wiki/Acronym)，要根据大小写惯例统一大写或小写：
+  对于那些在美式英语中，全部以大写字母出现的 [首字母缩写](https://en.wikipedia.org/wiki/Acronym)，应根据大小写惯例统一大写或小写：
 
   ```swift
   var utf8Bytes: [UTF8.CodeUnit]
