@@ -4,7 +4,7 @@
 
 [英文原版在线版](https://swift.org/documentation/api-design-guidelines/)
 
-[网站的 GitHub 仓库地址](https://github.com/apple/swift-internals/blob/gh-pages/api-design-guidelines/index.md)
+[网站的 GitHub 仓库地址](https://github.com/apple/swift-org-website/blob/main/documentation/api-design-guidelines/index.md)
 
 ## 更新记录
 
@@ -554,7 +554,7 @@
 
   [Acronyms and initialisms](https://en.wikipedia.org/wiki/Acronym) that commonly appear as all upper case in American English should be uniformly up- or down-cased according to case conventions:
   
-  对于那些在美语中全部以大写的形式出现的 [首字母缩写](https://en.wikipedia.org/wiki/Acronym)，要根据大小写惯例统一大写或小写：
+  对于那些在美式英语中，全部以大写字母出现的 [首字母缩写](https://en.wikipedia.org/wiki/Acronym)，应根据大小写惯例统一大写或小写：
 
   ```swift
   var utf8Bytes: [UTF8.CodeUnit]
