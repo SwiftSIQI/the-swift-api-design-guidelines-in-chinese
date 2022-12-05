@@ -757,6 +757,8 @@ func move(from start: Point, to end: Point)
   the full path will simplify development workflows or be used for file I/O.
   Use `#file` to preserve source compatibility with Swift 5.2 or earlier.
   
+* **在生产环境中使用 `#fileID` 表达源码文件位置**。`#fileID` 更简短并保护开发者隐私。仅在简化开发流程或使用文件 I/O 时才使用 `#filePath`，如测试助手、脚本，确保最终用户不会调用。
+
 ### 实参标签/Argument Labels
 
 ```swift
