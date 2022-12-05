@@ -148,7 +148,7 @@
       /// A collection that supports equally efficient insertion/removal
       /// at any position.
       struct List {
-
+      
       /// The element at the beginning of `self`, or `nil` if self is
       /// empty.
       var first: Element?
@@ -432,7 +432,7 @@
         ```swift
         /// Strips all the newlines from `self`
         mutating func stripNewlines()
-
+      
         /// Returns a copy of `self` with all the newlines stripped.
         func strippingNewlines() -> String
         ...
@@ -457,7 +457,7 @@
 
 * **描述事物的协议，读起来应该像名词**（例如，`Collection`）。
 
-* **Protocols that describe a capability should be named using the suffixes `able`, `ible`, or `ing`**(e.g. Equatable, ProgressReporting).
+* **Protocols that describe a capability should be named using the suffixes `able`, `ible`, or `ing`** (e.g. Equatable, ProgressReporting).
 
 * **描述能力的协议，应该使用后缀 `able`，`ible` 或 `ing`**（例如，Equatable，ProgressReporting）。
 
@@ -467,8 +467,7 @@
 
 ### 合理的使用术语/Use Terminology Well
 
-> Term of Art  
-> noun - a word or phrase that has a precise, specialized meaning within a particular field or profession.  
+> Term of Artnoun - a word or phrase that has a precise, specialized meaning within a particular field or profession.  
 >
 > 术语的艺术  
 > 名词——在某个领域或行业内，有着明确特殊含义的词或短语。
@@ -504,7 +503,7 @@
 
 * **遵循先例**。如果现有术语已经能够完美表述一个含义，那么就不要为了迁就新手，打破这种先例。
 
-  It is better to name a contiguous data structure `Array` than to use a simplified term such as `List`, even though a beginner might grasp the the meaning of `List` more easily. Arrays are fundamental in modern computing, so every programmer knows—or will soon learn—what an array is. Use a term that most programmers are familiar with, and their web searches and questions will be rewarded.
+  It is better to name a contiguous data structure `Array` than to use a simplified term such as `List`, even though a beginner might grasp the meaning of `List` more easily. Arrays are fundamental in modern computing, so every programmer knows—or will soon learn—what an array is. Use a term that most programmers are familiar with, and their web searches and questions will be rewarded.
 
   例如，最好将一个连续的数据结构命名为 `Array`，而非更简单的 `List`，虽然对于新手来说，后者的含义更容易掌握。数组是现代计算机科学的基础数据结构，所以每个程序员都知道——或者很快就能理解——什么是数组。使用大多数程序员所熟悉的术语，这样，即便有问题，互联网和其他人也能够提供帮助。
 
@@ -583,13 +582,16 @@
   ```swift
   👍👍👍
   extension Shape {
-    /// Returns `true` iff `other` is within the area of `self`.
+    /// Returns `true` if `other` is within the area of `self`;
+    /// otherwise, `false`.
     func contains(_ other: Point) -> Bool { ... }
-
-    /// Returns `true` iff `other` is entirely within the area of `self`.
+  
+    /// Returns `true` if `other` is entirely within the area of `self`;
+    /// otherwise, `false`.
     func contains(_ other: Shape) -> Bool { ... }
-
-    /// Returns `true` iff `other` is within the area of `self`.
+  
+    /// Returns `true` if `other` is within the area of `self`;
+    /// otherwise, `false`.
     func contains(_ other: LineSegment) -> Bool { ... }
   }
   ```
@@ -601,8 +603,8 @@
   ```swift
   👍👍👍
   extension Collection where Element : Equatable {
-    /// Returns `true` iff `self` contains an element equal to
-    /// `sought`.
+    /// Returns `true` if `self` contains an element equal to
+    /// `sought`; otherwise, `false`.
     func contains(_ sought: Element) -> Bool { ... }
   }
   ```
@@ -616,7 +618,7 @@
   extension Database {
     /// Rebuilds the database's search index
     func index() { ... }
-
+  
     /// Returns the `n`th row in the given table.
     func index(_ n: Int, inTable: TableID) -> TableRow { ... }
   }
@@ -661,7 +663,7 @@ func move(from start: Point, to end: Point)
     /// Return an `Array` containing the elements of `self`
     /// that satisfy `predicate`.
     func filter(_ predicate: (Element) -> Bool) -> [Generator.Element]
-
+  
     /// Replace the given `subRange` of elements with `newElements`.
     mutating func replaceRange(_ subRange: Range, with newElements: [E])
     ```
@@ -748,6 +750,14 @@ func move(from start: Point, to end: Point)
 * **Prefer to locate parameters with defaults toward the end** of the parameter list. Parameters without defaults are usually more essential to the semantics of a method, and provide a stable initial pattern of use where methods are invoked.
 
 * **将具有默认参数的参数项放到方法最后**。从语义上来说，没有默认参数的参数项对于方法来说更为重要，并且这样做可以在调用时提供稳定的格式。
+
+* **If your API will run in production, prefer `#fileID`** over alternatives.
+  `#fileID` saves space and protects developers’ privacy. Use `#filePath` in
+  APIs that are never run by end users (such as test helpers and scripts) if
+  the full path will simplify development workflows or be used for file I/O.
+  Use `#file` to preserve source compatibility with Swift 5.2 or earlier.
+  
+* **在生产环境中使用 `#fileID` 表达源码文件位置**。`#fileID` 更简短并保护开发者隐私。仅在简化开发流程或使用文件 I/O 时才使用 `#filePath`，如测试助手、脚本，确保最终用户不会调用。
 
 ### 实参标签/Argument Labels
 
@@ -883,9 +893,10 @@ x.move(from: x, to: y)
   /// bytes to allocate.
   ///
   /// - Returns:
-  ///   - reallocated: `true` iff a new block of memory
-  ///     was allocated.
-  ///   - capacityChanged: `true` iff `capacity` was updated.
+  ///   - reallocated: `true` if a new block of memory
+  ///     was allocated; otherwise, `false`.
+  ///   - capacityChanged: `true` if `capacity` was updated;
+  ///     otherwise, `false`.
   mutating func ensureUniqueStorage(
     minimumCapacity requestedCapacity: Int, 
     allocate: (_ byteCount: Int) -> UnsafePointer<Void>
@@ -909,7 +920,7 @@ x.move(from: x, to: y)
   struct Array {
     /// Inserts `newElement` at `self.endIndex`.
     public mutating func append(_ newElement: Element)
-
+  
     /// Inserts the contents of `newElements`, in order, at
     /// `self.endIndex`.
     public mutating func append(_ newElements: S)
@@ -936,7 +947,7 @@ x.move(from: x, to: y)
   struct Array {
     /// Inserts `newElement` at `self.endIndex`.
     public mutating func append(_ newElement: Element)
-
+  
     /// Inserts the contents of `newElements`, in order, at
     /// `self.endIndex`.
     public mutating func append(contentsOf newElements: S)
