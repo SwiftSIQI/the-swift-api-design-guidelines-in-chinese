@@ -4,7 +4,7 @@
 
 [英文原版在线版](https://swift.org/documentation/api-design-guidelines/)
 
-[网站的 GitHub 仓库地址](https://github.com/apple/swift-internals/blob/gh-pages/api-design-guidelines/index.md)
+[网站的 GitHub 仓库地址](https://github.com/apple/swift-org-website/blob/main/documentation/api-design-guidelines/index.md)
 
 ## 更新记录
 
