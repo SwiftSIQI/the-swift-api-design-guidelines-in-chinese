@@ -9,7 +9,7 @@
 ## 更新记录
 
 * 2023.10.22 对翻译版本进行更新
- * 与原文 main 分支的[e0e02139e3e2c8aef14c67a7c99eb3f666077b3c] (https://github.com/apple/swift-org-website/commit/e0e02139e3e2c8aef14c67a7c99eb3f666077b3c)节点一致，2023.01.09
+  * 与原文 main 分支的[e0e0213](https://github.com/apple/swift-org-website/commit/e0e02139e3e2c8aef14c67a7c99eb3f666077b3c)节点一致，2023.01.09
 * 2021.09.09 对翻译版本进行更新
   * 与原文 master 分支的 [5131442](https://github.com/apple/swift-internals/commit/51314422908e17cb5ba4812cf465f9f2110b58de) 节点一致, 2018.12.05
 * 2020.03.09 与原文对比无更新
