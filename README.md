@@ -2,12 +2,14 @@
 
 ## 原文地址
 
-[英文原版在线版](https://swift.org/documentation/api-design-guidelines/)
+[英文原版在线版](https://www.swift.org/documentation/api-design-guidelines/)
 
 [网站的 GitHub 仓库地址](https://github.com/apple/swift-org-website/blob/main/documentation/api-design-guidelines/index.md)
 
 ## 更新记录
 
+* 2023.10.22 对翻译版本进行更新
+ * 与原文 main 分支的[e0e02139e3e2c8aef14c67a7c99eb3f666077b3c] (https://github.com/apple/swift-org-website/commit/e0e02139e3e2c8aef14c67a7c99eb3f666077b3c)节点一致，2023.01.09
 * 2021.09.09 对翻译版本进行更新
   * 与原文 master 分支的 [5131442](https://github.com/apple/swift-internals/commit/51314422908e17cb5ba4812cf465f9f2110b58de) 节点一致, 2018.12.05
 * 2020.03.09 与原文对比无更新
@@ -59,75 +61,75 @@
 
 ## 基本准则/Fundamentals
 
-* **Clarity at the point of use** is your most important goal. Entities such as methods and properties are declared only once but used repeatedly. Design APIs to make those uses clear and concise. When evaluating a design, reading a declaration is seldom sufficient; always examine a use case to make sure it looks clear in context.
+* **Clarity at the point of use** is your most important goal. Entities such as methods and properties are declared only once but used repeatedly. Design APIs to make those uses clear and concise. When evaluating a design, reading a declaration is seldom sufficient; always examine a use case to make sure it looks clear in context. 
 
 * **清晰的传达使用意图**是最主要的目标。方法和属性这样的实体虽然只被声明了一次，但却会被重复调用。因此在设计 API 时，应尽可能保证这些实体的使用简单明了。当评估某个设计优劣时，只阅读其声明是不够的；还需要将其放在使用场景下，并结合上下文来检查其含义是否做到清晰明了。
 
-* **Clarity is more important than brevity.** Although Swift code can be compact, it is a non-goal to enable the smallest possible code with the fewest characters. Brevity in Swift code, where it occurs, is a side-effect of the strong type system and features that naturally reduce boilerplate.
+* **Clarity is more important than brevity.** Although Swift code can be compact, it is a non-goal to enable the smallest possible code with the fewest characters. Brevity in Swift code, where it occurs, is a side-effect of the strong type system and features that naturally reduce boilerplate. 
 
-* **传达清晰的意图比文字简洁更重要**。尽管 Swift 代码可以写的十分小巧紧凑，但用最少的字符来书写代码并非 Swift 的设计本意。如果 Swift 代码看起来非常简洁，那只是强类型系统和各种特性带来的副作用，无形中减少了模板代码（boilerplate）的使用。
+* **传达清晰的意图比文字简洁更重要**。尽管 Swift 代码可以写的十分紧凑，但用最少的字符来书写代码并非 Swift 的设计本意。在 Swift 代码中，简洁是由强大的类型系统和自动减少样板代码的特性所带来的副作用。。
   
   >译者注：boilerplate 是指 boilerplate code, [详情请点击这里](https://en.wikipedia.org/wiki/Boilerplate_code)。
 
-* **Write a documentation comment** for every declaration. Insights gained by writing documentation can have a profound impact on your design, so don’t put it off.
+* **Write a documentation comment** for every declaration. Insights gained by writing documentation can have a profound impact on your design, so don't put it off. 
 
 * **将编写文档注释的工作**落实到每一个声明中。编写文档注释可以加深对代码理解，从而对你的设计产生深远的影响，所以不要偷懒。
 
-  > If you are having trouble describing your API’s functionality in simple terms, **you may have designed the wrong API.**    
+  > If you are having trouble describing your API's functionality in simple terms, **you may have designed the wrong API.**    
   >
   > 如果无法用简单的术语来描述你设计的 API ，那么**你很有可能在设计 API 上犯了错。**
 
-  * **Use Swift’s dialect of Markdown.**
+  * **Use Swift’s [dialect of Markdown](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/).**
 
-  * **使用 Swift 提供的 [特别版 Markdown 语法](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/)**。
+  * **使用 Swift 提供的特别版 Markdown 语法**。
 
   * **Begin with a summary** that describes the entity being declared. Often, an API can be completely understood from its declaration and its summary.
 
   * **开头的摘要**用来描述实体。通常情况下，阅读 API 的声明和摘要就可以完全理解其用途。
 
     ```swift
-    /// Returns a "view" of `self` containing the same elements in
-    /// reverse order.
-    func reversed() -> ReverseCollection
+     /// **Returns a "view" of `self` containing the same elements in**
+     /// **reverse order.**
+     func reversed() -> ReverseCollection<Self>
     ```
 
     * **Focus on the summary**; it’s the most important part. Many excellent documentation comments consist of nothing more than a great summary.
 
     * **专注于摘要**；这是最重要的部分。高质量的摘要足以让文档注释成为优秀的典范。
 
-    * **Use a single sentence fragment if possible**, ending with a period. Do not use a complete sentence.
+    * **Use a single sentence fragment** if possible, ending with a period. Do not use a complete sentence.
 
-    * **用一个语句片段进行描述**，并用句号结尾。不要写一个复杂的句子。
+    * **尽可能使用一个句子片段**，并用句号结尾。不要使用完整的句子。
 
       > 译者注：sentence fragment 是指能表达明确含义但从语法上并不完整的句子，[详情请点击这里](https://en.wiktionary.org/wiki/sentence_fragment)。
 
     * **Describe what a function or method does and what it returns**, omitting null effects and Void returns:
 
-    * **描述一个函数或方法做什么，以及会返回什么**，对于那些无返回值或者什么都不做的情况直接省略：
+    * **描述一个函数或方法做什么，以及会返回什么**，不包括那些无返回值或者什么都不做的情况：
 
       ```swift
-      /// Inserts `newHead` at the beginning of `self`.
+      /// **Inserts** `newHead` at the beginning of `self`.
       mutating func prepend(_ newHead: Int)
 
-      /// Returns a `List` containing `head` followed by the elements
+      /// **Returns** a `List` containing `head` followed by the elements
       /// of `self`.
       func prepending(_ head: Element) -> List
 
-      /// Removes and returns the first element of `self` if non-empty;
+      /// **Removes and returns** the first element of `self` if non-empty;
       /// returns `nil` otherwise.
       mutating func popFirst() -> Element?
       ```
 
       Note: in rare cases like `popFirst` above, the summary is formed of multiple sentence fragments separated by semicolons.
 
-      注意：类似上面 `popFirst` 这样极少数的情况，摘要应该用分号分割成多条语句。
+      注意：像上面的 `popFirst` 这样的情况很少见，摘要是由多个以分号分隔的句子片段组成的。
 
     * **Describe what a subscript accesses:**
 
     * **描述下标访问的内容：**
 
       ```swift
-      /// Accesses the `index`th element.
+      /// **Accesses** the `index`th element.
       subscript(index: Int) -> Element { get set }
       ```
 
@@ -136,7 +138,7 @@
     * **描述构造器创建的内容：**
 
       ```swift
-      /// Creates an instance containing `n` repetitions of `x`.
+      /// **Creates** an instance containing `n` repetitions of `x`.
       init(count n: Int, repeatedElement x: Element)
       ```
 
@@ -180,11 +182,11 @@
       _ items: Any..., separator: String = " ", terminator: String = "\n")
     ```
 
-    * **Use recognized symbol documentation markup elements to** add information beyond the summary, whenever appropriate.
+    * **Use recognized [symbol documentation markup](https://developer.apple.com/library/prerelease/mac/documentation/Xcode/Reference/xcode_markup_formatting_ref/SymbolDocumentation.html#//apple_ref/doc/uid/TP40016497-CH51-SW1) elements to** add information beyond the summary, whenever appropriate.
 
-    * **使用可识别的符号文档标记元素**，为注释添加摘要以外的任意信息。
+    * 在合适的时间，**使用可识别的符号文档标记元素**，为注释添加摘要以外的任意信息。
 
-    * **Know and use recognized bullet items with symbol command syntax**. Popular development tools such as Xcode give special treatment to bullet items that start with the following keywords:
+    * **Know and use recognized bullet items with [symbol command syntax](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/SymbolDocumentation.html#//apple_ref/doc/uid/TP40016497-CH51-SW13)**. Popular development tools such as Xcode give special treatment to bullet items that start with the following keywords:
 
     * **了解并使用符号命令语法做条目**。像 Xcode 等主流开发工具为这些条目提供了特殊的处理，其关键词如下：
 
@@ -239,7 +241,7 @@
     allViews.removeElement(cancelButton)
     ```
 
-  In this case, the word Element adds nothing salient at the call site. This API would be better:
+  In this case, the word `Element` adds nothing salient at the call site. This API would be better:
 
   在上面的代码中，`Element` 在调用时没有提供任何有效的信息，API 修改成下面这样会更好。
 
@@ -283,7 +285,8 @@
   }
   ```
 
-  If an associated type is so tightly bound to its protocol constraint that the protocol name is the role, avoid collision by appending Protocol to the protocol name:
+  If an associated type is so tightly bound to its protocol constraint that the protocol name is the role, avoid collision by appending `Protocol` to the protocol name:
+
 
   如果关联类型（associated type）和遵循的协议命名冲突，可以在协议名后面加上 `protocol`：
 
@@ -353,7 +356,7 @@
 
 * The first argument to **initializer and factory methods calls** should not form a phrase starting with the base name, e.g. `x.makeWidget(cogCount: 47)`
 
-* **构造器和 [工厂方法](https://en.wikipedia.org/wiki/Factory_method_pattern)** 的第一个参数命名不应该考虑方法名，应该独立命名，如：`x.makeWidget(cogCount: 47)`
+* **构造器和 [工厂方法](https://en.wikipedia.org/wiki/Factory_method_pattern)** 的第一个参数不应以基本名称开头形成一个短语，应该独立命名，如：`x.makeWidget(cogCount: 47)`
 
   For example, the first arguments to these calls do not read as part of the same phrase as the base name:
 
@@ -528,7 +531,7 @@
   > 译者注：free function 在这里翻译为全局函数，[详情请点击这里](https://en.wikipedia.org/wiki/Free_function)
 
   1. When there’s no obvious self:
-  * 没有明显的self:
+  * 没有明显的 self:
 
       ```swift
       min(x, y, z)
@@ -751,11 +754,7 @@ func move(from start: Point, to end: Point)
 
 * **将具有默认参数的参数项放到方法最后**。从语义上来说，没有默认参数的参数项对于方法来说更为重要，并且这样做可以在调用时提供稳定的格式。
 
-* **If your API will run in production, prefer `#fileID`** over alternatives.
-  `#fileID` saves space and protects developers’ privacy. Use `#filePath` in
-  APIs that are never run by end users (such as test helpers and scripts) if
-  the full path will simplify development workflows or be used for file I/O.
-  Use `#file` to preserve source compatibility with Swift 5.2 or earlier.
+* **If your API will run in production, prefer `#fileID`** over alternatives. `#fileID` saves space and protects developers’ privacy. Use `#filePath` in APIs that are never run by end users (such as test helpers and scripts) if the full path will simplify development workflows or be used for file I/O. Use `#file` to preserve source compatibility with Swift 5.2 or earlier.
   
 * **在生产环境中使用 `#fileID` 表达源码文件位置**。`#fileID` 更简短并保护开发者隐私。仅在简化开发流程或使用文件 I/O 时才使用 `#filePath`，如测试助手、脚本，确保最终用户不会调用。
 
@@ -772,7 +771,6 @@ x.move(from: x, to: y)
 
 * **In initializers that perform value preserving type conversions, omit the first argument label**, e.g. `Int64(someUInt32)`
 
-<a name="type-conversion"></a>
 * **如果构造函数进行的是值保留类型转换操作，则省略第一个实参标签**。例如：`Int64(someUint32)`。
 
   The first argument should always be the source of the conversion.
