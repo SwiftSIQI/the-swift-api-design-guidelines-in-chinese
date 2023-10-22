@@ -301,7 +301,7 @@
 
 * **为弱类型参数补充信息**以明确参数的作用。
 
-  Especially when a parameter type is `NSObject`, `Any`, `AnyObject`, or a fundamental type such `Int` or `String`, type information and context at the point of use may not fully convey intent. In this example, the declaration may be clear, but the use site is vague.
+  Especially when a parameter type is `NSObject`, `Any`, `AnyObject`, or a fundamental type such as `Int` or `String`, type information and context at the point of use may not fully convey intent. In this example, the declaration may be clear, but the use site is vague.
 
   当参数类型是 `NSObject`、`Any`、`AnyObject` 或者是基础类型比如 `Int`、`String` 时，调用处的类型信息和上下文环境可能无法完全表明函数意图。在下面的例子中，它的声明看起来语义明确，但从调用者的角度来看，就显得不够清晰。
 
