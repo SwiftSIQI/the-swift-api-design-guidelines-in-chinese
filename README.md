@@ -122,7 +122,7 @@
 
       Note: in rare cases like `popFirst` above, the summary is formed of multiple sentence fragments separated by semicolons.
 
-      注意：像上面的 `popFirst` 这样的情况很少见，摘要是由多个以分号分隔的句子片段组成的。
+      注意：像上面的 `popFirst` 这样很少见的情况中，摘要是由多个以分号分隔的句子片段组成的。
 
     * **Describe what a subscript accesses:**
 
@@ -159,7 +159,7 @@
 
   * **Optionally, continue** with one or more paragraphs and bullet items. Paragraphs are separated by blank lines and use complete sentences.
 
-  * **如果需要，可以继续添加**一个或多个段落并有序排列这些条目。但是段落应该使用空行隔开，并使用完整的句子进行描述。
+  * **如果需要，可以继续添加**一个或多个段落并有序排列这些条目。段落应该使用空行隔开，并使用完整的句子进行描述。
 
     ```swift
     /// Writes the textual representation of each    ← Summary
@@ -313,7 +313,7 @@
 
   To restore clarity, **precede each weakly typed parameter with a noun describing its role:**
 
-  为了清晰的传达 API 本身的意图，**可以在每个弱类型参数前加一个名词来描述它的作用。**
+  为了清晰地传达 API 本身的意图，**可以在每个弱类型参数前加一个名词来描述它的作用。**
 
   ```swift
   👍👍👍
@@ -470,10 +470,11 @@
 
 ### 合理的使用术语/Use Terminology Well
 
-> Term of Artnoun - a word or phrase that has a precise, specialized meaning within a particular field or profession.  
+> Term of Art  
+> _noun_ - a word or phrase that has a precise, specialized meaning within a particular field or profession.  
 >
 > 术语的艺术  
-> 名词——在某个领域或行业内，有着明确特殊含义的词或短语。
+> _名词_ —— 在某个领域或行业内，有着明确特殊含义的词或短语。
 
 * **Avoid obscure terms** if a more common word conveys meaning just as well. Don’t say “epidermis” if “skin” will serve your purpose. Terms of art are an essential communication tool, but should only be used to capture crucial meaning that would otherwise be lost.
 
@@ -508,7 +509,7 @@
 
   It is better to name a contiguous data structure `Array` than to use a simplified term such as `List`, even though a beginner might grasp the meaning of `List` more easily. Arrays are fundamental in modern computing, so every programmer knows—or will soon learn—what an array is. Use a term that most programmers are familiar with, and their web searches and questions will be rewarded.
 
-  例如，最好将一个连续的数据结构命名为 `Array`，而非更简单的 `List`，虽然对于新手来说，后者的含义更容易掌握。数组是现代计算机科学的基础数据结构，所以每个程序员都知道——或者很快就能理解——什么是数组。使用大多数程序员所熟悉的术语，这样，即便有问题，互联网和其他人也能够提供帮助。
+  例如，最好将一个连续的数据结构命名为 `Array`，而非更简单的 `List`，虽然对于新手来说，后者的含义更容易掌握。数组是现代计算机科学的基础数据结构，所以每个程序员都知道（或者很快就能知道）什么是数组。使用大多数程序员所熟悉的术语，这样，即便有问题，互联网和其他人也能够提供帮助。
 
   Within a particular programming domain, such as mathematics, a widely precedented term such as `sin(x)` is preferable to an explanatory phrase such as `verticalPositionOnUnitCircleAtOriginOfEndOfRadiusWithAngle(x)`. Note that in this case, precedent outweighs the guideline to avoid abbreviations: although the complete word is sine, “sin(x)” has been in common use among programmers for decades, and among mathematicians for centuries.
   
@@ -522,7 +523,7 @@
 
 * **对于复杂度不是 O(1) 的计算型属性，要通过注释特别说明** 。人们总是认为属性访问不牵扯大量计算，因为在人类的心智模型里会潜意识的认为当前访问的只是一个存储型属性。当这个假设被打破时，有必要提醒他们。
 
-  > mental model 是指心智模型，可以通俗的理解为人们的思考方式或者思维过程，[详情请点击这里](https://en.wikipedia.org/wiki/Mental_model)
+  > mental model 是指心智模型，可以通俗的理解为人们的思考方式或者思维过程，[详情请点击这里](https://en.wikipedia.org/wiki/Mental_model)。
 
 * **Prefer methods and properties to free functions**. Free functions are used only in special cases:
 
@@ -809,7 +810,7 @@ x.move(from: x, to: y)
 
   > A value preserving type conversion is a [monomorphism]((https://en.wikipedia.org/wiki/Monomorphism)), i.e. every difference in the value of the source results in a difference in the value of the result. For example, conversion from Int8 to Int64 is value preserving because every distinct Int8 value is converted to a distinct Int64 value. Conversion in the other direction, however, cannot be value preserving: Int64 has more possible values than can be represented in an Int8. 
   >
-  >值保留类型转换是 [单态](https://en.wikipedia.org/wiki/Monomorphism)，即一个值对应一个结果。例如，将一个 `Int8` 值转换为一个 `Int64` 值属于这种操作，因为不同的 `Int8` 值都对应不同的 `Int64` 值。反过来就不是：`Int64` 能表示的值要比 `Int8` 多得多。
+  > 值保留类型转换是 [单态](https://en.wikipedia.org/wiki/Monomorphism)，即一个值对应一个结果。例如，将一个 `Int8` 值转换为一个 `Int64` 值属于这种操作，因为不同的 `Int8` 值都对应不同的 `Int64` 值。反过来就不是：`Int64` 能表示的值要比 `Int8` 多得多。
   >
   > Note: the ability to retrieve the original value has no bearing on whether a conversion is value preserving.
   >  
